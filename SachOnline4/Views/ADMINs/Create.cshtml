@@ -1,0 +1,52 @@
+﻿@model SachOnline4.Models.ADMIN
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Create</h2>
+
+<style type="text/css">
+    .container {
+        margin-top: 8%;
+        width: 400px;
+        border: ridge 1.5px white;
+        padding: 20px;
+    }
+</style>
+
+
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="bootstrapform.php" method="post">
+            <div class="form-group">
+                <label for="firstname">Họ tên</label>
+                @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="lastname">Số điện thoại</label>
+                @Html.EditorFor(model => model.DienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DienThoai, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="phoneno">Tên đăng nhập</label>
+                @Html.EditorFor(model => model.TenDN, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenDN, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="Email1">Mật khẩu</label>
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label for="Password">Quyền</label>
+                @Html.EditorFor(model => model.Quyen, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quyen, "", new { @class = "text-danger" })
+            </div>
+            <button type="submit" class="btn btn-primary" name="create">Sign up</button>
+        </form>
+    </div>
+
+    

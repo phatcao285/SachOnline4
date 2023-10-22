@@ -1,0 +1,36 @@
+﻿@model IEnumerable<SachOnline4.Models.SACH>
+
+@{
+    ViewBag.Title = "SachTheoChuDe";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<h2 class="text-centerss">SÁCH THEO CHỦ ĐỀ</h2>
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="~/Images/@Html.DisplayFor(modelItem => item.AnhBia)" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.TenSach)</h4>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.MoTa)</p>
+
+                <p class="d-inline-flex gap-2">
+                    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Thêm vào giỏ hàng</a>
+                    <a href="@Url.Action("Details","SachOnlines",new {id = item.MaSach })" class="btn btn-primary">Xem</a>
+                </p>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+
+
+
+

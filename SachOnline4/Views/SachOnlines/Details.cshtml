@@ -1,0 +1,78 @@
+﻿@model SachOnline4.Models.SACH
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style>
+    .name-book{
+        color:red;
+        padding-bottom:30px;
+    }
+
+    .imgbook {
+        width: 200px;
+        height: 200px;
+    }
+    .thumbnail{
+        padding-bottom:30px;
+    }
+
+    .des{
+        left:0 !important;
+        padding-bottom:30px;
+    }
+
+    .date-up{
+        font-weight:600;
+    }
+
+    .text-price{
+        font-weight:600;
+        color:blue;
+        font-size:30px;
+    }
+
+    .info{
+        padding-bottom:30px;
+    }
+
+    .price{
+        font-weight:600;
+    }
+
+</style>
+
+<div class="content-right">
+    <div class="row">
+        <div class="name-book text-center">
+          <h1>@Html.DisplayFor(model => model.TenSach)</h1>
+        </div>
+        <div class="thumbnail text-center">
+            <img src="~/Images/@Html.DisplayFor(model => model.AnhBia)" alt="Thumbnail Image 1" class="img-responsive img-rounded imgbook ">
+            </div>
+        
+            <div class="des text-left" style="white-space: pre-line;">
+                @Html.DisplayFor(model => model.MoTa)
+            </div>
+
+        <div class="info text-center">
+            <div class="date-up">
+                Ngày cập nhật:   @Html.DisplayFor(model => model.NgayCapNhat, "{0:dd/MM/yyyy}")
+            </div>
+            <div class="price text-right">
+                Giá bán: <span class="text-price">@Html.DisplayFor(model => model.GiaBan)</span>
+            </div>
+            </div>
+        <div class="btn-add-card text-center">
+            <p>
+                <a href="@Url.Action("ThemGioHang","GioHang", new { ms = Model.MaSach, url = Request.Url.ToString() }) " class="btn btn-warning" role="button">
+                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Thêm vào giỏ hàng
+                </a>
+            </p>
+            </div>
+            </div>
+        </div>
+
+

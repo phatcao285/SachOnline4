@@ -1,0 +1,18 @@
+﻿@model IEnumerable<SachOnline4.Models.CHUDE>
+
+@{
+    ViewBag.Title = "ChuDePartial";
+
+}
+
+
+<ul class="list-group">
+    <li class="list-group-item active" style="font-weight:bold; text-align:center">SÁCH THEO CHỦ ĐỀ</li>
+    @foreach (var item in Model)
+    {
+        @foreach (var item in Model)
+           <a href="@Url.Action("Details","NhaXuatBan",new { id = item.MaCD })" class="list-group-item">@Html.DisplayFor(modelItem => item.TenChuDe)</a>
+    }
+</ul>
+
+
